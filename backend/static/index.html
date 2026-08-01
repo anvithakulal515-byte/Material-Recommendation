@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanical Material Recommendation System | Low-Budget Cost Effective Mode</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfeff',
+                            100: '#cffafe',
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                            900: '#164e63',
+                        },
+                        darkbg: '#0B0F17',
+                        cardbg: '#111827',
+                        cardborder: '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- React & Babel CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- HTML2PDF library for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #0B0F17;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #f3f4f6;
+        }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-emerald {
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="min-h-screen custom-scrollbar flex flex-col justify-between">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const API_BASE = "";
+
+        const PRESET_PROJECTS = [
+            { name: "Hydraulic Lift", desc: "Dual-cylinder scissor lift mechanism" },
+            { name: "Robotic Arm", desc: "6-Axis precision servo joint arm" },
+            { name: "CNC Machine", desc: "3-Axis router with epoxy granite bed" },
+            { name: "Conveyor System", desc: "Heavy industrial belt conveyor" },
+            { name: "Wind Turbine", desc: "1kW horizontal axis renewable turbine" },
+            { name: "Go Kart", desc: "Tubular steel chassis racing vehicle" }
+        ];
+
+        const CURRENCIES = {
+            INR: { symbol: "₹", rate: 1.0, label: "Indian Rupees (INR ₹)" },
+            USD: { symbol: "$", rate: 0.01156, label: "USD ($)" },
+            EUR: { symbol: "€", rate: 0.01063, label: "EUR (€)" },
+            GBP: { symbol: "£", rate: 0.00901, label: "GBP (£)" }
+        };
+
+        function App() {
+            const [query, setQuery] = useState("");
+            const [environment, setEnvironment] = useState("Standard Industrial");
+            const [budget, setBudget] = useState("Economy"); // Default to Economy Low-Budget mode!
+            const [loading, setLoading] = useState(false);
+            const [activeRecord, setActiveRecord] = useState(null);
+            const [history, setHistory] = useState([]);
+            const [showHistory, setShowHistory] = useState(false);
+            const [selectedCurrency, setSelectedCurrency] = useState("INR");
+            
+            // Custom Unit Prices state for exact financial calculator edits (in INR)
+            const [customUnitPricesINR, setCustomUnitPricesINR] = useState({});
+
+            // Chatbot state
+            const [chatOpen, setChatOpen] = useState(false);
+            const [chatMessages, setChatMessages] = useState([]);
+            const [chatInput, setChatInput] = useState("");
+            const [chatLoading, setChatLoading] = useState(false);
+            const chatEndRef = useRef(null);
+
+            useEffect(() => {
+                fetchHistory();
+            }, []);
+
+            useEffect(() => {
+                if (chatEndRef.current) {
+                    chatEndRef.current.scrollIntoView({ behavior: "smooth" });
+                }
+            }, [chatMessages]);
+
+            const fetchHistory = async () => {
+                try {
+                    const res = await fetch(`${API_BASE}/api/projects`);
+                    if (res.ok) {
+                        const data = await res.json();
+                        setHistory(data);
+                        if (data.length > 0 && !activeRecord) {
+                            setActiveRecord(data[0]);
+                        }
+                    }
+                } catch (err) {
+                    console.error("Failed to fetch history:", err);
+                }
+            };
+
+            const handleAnalyze = async (projectName, budgetOverride) => {
+                const searchName = projectName || query;
+                if (!searchName || searchName.trim().length < 2) return;
+
+                const targetBudget = budgetOverride || budget;
+                setLoading(true);
+                try {
+                    const res = await fetch(`${API_BASE}/api/recommend`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            project_name: searchName,
+                            environment: environment,
+                            budget_level: targetBudget
+                        })
+                    });
+                    if (res.ok) {
+                        const newRecord = await res.json();
+                        setActiveRecord(newRecord);
+                        setCustomUnitPricesINR({});
+                        fetchHistory();
+                        setChatMessages([
+                            {
+                                role: "assistant",
+                                content: `Namaste! I'm your Engineering AI Assistant for **${newRecord.project_name}**. Ask me any technical questions about low-budget cost-effective material substitutes, local Indian suppliers, or price optimization!`
+                            }
+                        ]);
+                    }
+                } catch (err) {
+                    alert("Error reaching server. Please try again.");
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            const handleDeleteHistory = async (id, e) => {
+                e.stopPropagation();
+                if (!confirm("Are you sure you want to delete this project record?")) return;
+                try {
+                    await fetch(`${API_BASE}/api/projects/${id}`, { method: "DELETE" });
+                    if (activeRecord && activeRecord.id === id) {
+                        setActiveRecord(null);
+                    }
+                    fetchHistory();
+                } catch (err) {
+                    console.error(err);
+                }
+            };
+
+            const handleDownloadPDF = () => {
+                if (!activeRecord) return;
+                const element = document.getElementById("report-export-area");
+                const opt = {
+                    margin: 0.4,
+                    filename: `${activeRecord.project_name.replace(/\s+/g, '_')}_Low_Budget_Cost_Report.pdf`,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2, backgroundColor: '#0B0F17' },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                };
+                html2pdf().set(opt).from(element).save();
+            };
+
+            const handleSendChat = async (questionText) => {
+                const msg = questionText || chatInput;
+                if (!msg || !msg.trim() || !activeRecord) return;
+
+                const userMsg = { role: "user", content: msg };
+                setChatMessages(prev => [...prev, userMsg]);
+                setChatInput("");
+                setChatLoading(true);
+
+                try {
+                    const res = await fetch(`${API_BASE}/api/chat`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            project_name: activeRecord.project_name,
+                            project_context: activeRecord.report,
+                            question: msg
+                        })
+                    });
+                    if (res.ok) {
+                        const data = await res.json();
+                        setChatMessages(prev => [
+                            ...prev,
+                            { role: "assistant", content: data.answer, followups: data.suggested_followups }
+                        ]);
+                    }
+                } catch (err) {
+                    setChatMessages(prev => [
+                        ...prev,
+                        { role: "assistant", content: "Apologies, network error occurred answering chat request." }
+                    ]);
+                } finally {
+                    setChatLoading(false);
+                }
+            };
+
+            const report = activeRecord ? activeRecord.report : null;
+            const curr = CURRENCIES[selectedCurrency];
+
+            const getComputedItemCostINR = (mat, idx) => {
+                const defaultINR = mat.unit_cost_inr || (mat.unit_cost_usd * 86.5);
+                const unitPriceINR = customUnitPricesINR[idx] !== undefined ? customUnitPricesINR[idx] : defaultINR;
+                let qtyNum = 1;
+                const match = mat.quantity.match(/(\d+(\.\d+)?)/);
+                if (match) {
+                    qtyNum = parseFloat(match[1]) || 1;
+                }
+                const totalINR = unitPriceINR * qtyNum;
+                return {
+                    unitPrice: (unitPriceINR * curr.rate).toLocaleString(undefined, {maximumFractionDigits: 2}),
+                    totalPrice: (totalINR * curr.rate).toLocaleString(undefined, {maximumFractionDigits: 2}),
+                    totalINR: totalINR,
+                    unitINR: unitPriceINR
+                };
+            };
+
+            const computedRawSubtotalINR = report ? report.materials.reduce((sum, mat, idx) => {
+                const itemCost = getComputedItemCostINR(mat, idx);
+                return sum + itemCost.totalINR;
+            }, 0) : 0;
+
+            const computedLaborINR = report ? (report.estimated_machining_and_labor_inr > 0 ? report.estimated_machining_and_labor_inr : computedRawSubtotalINR * 0.15) : 0;
+            const computedGrandTotalINR = computedRawSubtotalINR + computedLaborINR;
+
+            return (
+                <div className="min-h-screen flex flex-col justify-between">
+                    {/* Header Navbar */}
+                    <header className="border-b border-gray-800 bg-gray-900/90 backdrop-blur sticky top-0 z-40">
+                        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <div className="p-2 bg-gradient-to-tr from-emerald-500 to-teal-600 rounded-xl shadow-lg shadow-emerald-500/20">
+                                    <span className="text-xl font-black text-white">₹</span>
+                                </div>
+                                <div>
+                                    <h1 className="font-bold text-lg text-gray-100 flex items-center gap-2">
+                                        Mechanical Material System
+                                        <span className="text-xs bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded-full font-mono font-bold">⚡ Low-Budget Cost Effective Mode</span>
+                                    </h1>
+                                    <p className="text-xs text-gray-400">Engineering Material Recommendation & Low-Budget Pricing Engine</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                {/* Currency Switcher */}
+                                <div className="bg-gray-800 border border-gray-700 rounded-lg px-2.5 py-1 flex items-center gap-2 text-xs">
+                                    <span className="text-gray-400 font-medium">Currency:</span>
+                                    <select 
+                                        value={selectedCurrency} 
+                                        onChange={(e) => setSelectedCurrency(e.target.value)}
+                                        className="bg-transparent text-emerald-400 font-bold focus:outline-none cursor-pointer"
+                                    >
+                                        {Object.keys(CURRENCIES).map(c => (
+                                            <option key={c} value={c} className="bg-gray-900 text-white">{CURRENCIES[c].label}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                <button 
+                                    onClick={() => setShowHistory(!showHistory)} 
+                                    className="px-3 py-1.5 rounded-lg border border-gray-700 bg-gray-800 hover:bg-gray-700 text-sm font-medium flex items-center gap-2 transition"
+                                >
+                                    📜 History ({history.length})
+                                </button>
+
+                                {activeRecord && (
+                                    <button 
+                                        onClick={() => setChatOpen(true)}
+                                        className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium flex items-center gap-2 shadow-lg shadow-emerald-600/20 transition"
+                                    >
+                                        💬 AI Assistant
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+                    </header>
+
+                    <main className="max-w-7xl mx-auto px-4 py-8 w-full flex-grow space-y-8">
+                        {/* SECTION 1: Hero Search Input Banner */}
+                        <div className="glass-panel rounded-2xl p-6 sm:p-8 glow-emerald relative overflow-hidden">
+                            <div className="max-w-3xl space-y-4">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                                    <span>SECTION 1</span> • Project Input & Low-Budget Filter
+                                </div>
+                                <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+                                    Analyze Mechanical Projects & Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Low-Budget Cost-Effective Materials</span>
+                                </h2>
+                                <p className="text-gray-400 text-sm">
+                                    Generate cost-effective material specifications using commercial grade IS standards, low-cost substitutes, itemized pricing in Indian Rupees (₹), required tools, manufacturing steps, and safety guidelines.
+                                </p>
+
+                                {/* Search Bar */}
+                                <div className="space-y-4 pt-2">
+                                    <div className="flex flex-col sm:flex-row gap-3">
+                                        <div className="relative flex-1">
+                                            <input 
+                                                type="text" 
+                                                value={query}
+                                                onChange={(e) => setQuery(e.target.value)}
+                                                onKeyDown={(e) => e.key === 'Enter' && handleAnalyze()}
+                                                placeholder="Enter project (e.g. Hydraulic Lift, CNC Machine, Wind Turbine, Go Kart)..."
+                                                className="w-full bg-gray-900 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition"
+                                            />
+                                        </div>
+                                        <button 
+                                            onClick={() => handleAnalyze()}
+                                            disabled={loading}
+                                            className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/25 transition disabled:opacity-50"
+                                        >
+                                            {loading ? "Analysing Project..." : "Analyse Project"}
+                                        </button>
+                                    </div>
+
+                                    {/* Parameters Selector Row */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 text-sm">
+                                        <div className="flex items-center gap-2 bg-gray-900/60 border border-gray-800 rounded-lg p-2.5">
+                                            <span className="text-gray-400 text-xs font-medium uppercase">Environment:</span>
+                                            <select 
+                                                value={environment} 
+                                                onChange={(e) => setEnvironment(e.target.value)}
+                                                className="bg-transparent text-emerald-400 text-xs font-semibold focus:outline-none cursor-pointer flex-1"
+                                            >
+                                                <option value="Standard Industrial">Standard Industrial Workshop</option>
+                                                <option value="Outdoor Marine / High Corrosion">Outdoor Marine / High Corrosion</option>
+                                                <option value="Aerospace / High Strength-to-Weight">Aerospace / High Strength-to-Weight</option>
+                                                <option value="Cleanroom Precision Automation">Cleanroom Precision Automation</option>
+                                            </select>
+                                        </div>
+                                        <div className="flex items-center gap-2 bg-gray-900/60 border border-emerald-800 rounded-lg p-2.5 bg-emerald-950/20">
+                                            <span className="text-emerald-400 text-xs font-bold uppercase">Budget Mode:</span>
+                                            <select 
+                                                value={budget} 
+                                                onChange={(e) => {
+                                                    setBudget(e.target.value);
+                                                    if (query) handleAnalyze(query, e.target.value);
+                                                }}
+                                                className="bg-transparent text-emerald-400 text-xs font-bold focus:outline-none cursor-pointer flex-1"
+                                            >
+                                                <option value="Economy">⚡ Economy / Minimal Cost (Low-Budget)</option>
+                                                <option value="Standard">Standard (Optimal Balance)</option>
+                                                <option value="Premium Aircraft Grade">Premium / Aircraft Grade</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    {/* Quick Project Presets */}
+                                    <div className="space-y-2 pt-2">
+                                        <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Quick Project Presets:</p>
+                                        <div className="flex flex-wrap gap-2">
+                                            {PRESET_PROJECTS.map((preset) => (
+                                                <button
+                                                    key={preset.name}
+                                                    onClick={() => {
+                                                        setQuery(preset.name);
+                                                        handleAnalyze(preset.name);
+                                                    }}
+                                                    className="px-3 py-1.5 rounded-lg border border-gray-800 bg-gray-900/80 hover:bg-gray-800 hover:border-emerald-500/50 text-xs text-gray-300 transition flex items-center gap-1.5"
+                                                >
+                                                    <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                                    {preset.name}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* SECTION 2: EXACT MATERIAL COST BREAKDOWN IN INDIAN RUPEES (₹) & LOW-BUDGET OPTIONS */}
+                        {report && (
+                            <div id="report-export-area" className="space-y-8">
+                                <div className="glass-panel rounded-2xl p-6 sm:p-8 space-y-6 border-2 border-emerald-600/50 glow-emerald">
+                                    {/* Section 2 Header */}
+                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-800 pb-6">
+                                        <div>
+                                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
+                                                <span>SECTION 2</span> • Exact Material Cost Breakdown in Indian Rupees (₹)
+                                            </div>
+                                            <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                                                {report.project_name} — Cost Analysis
+                                                <span className="text-xs bg-emerald-950 text-emerald-300 border border-emerald-800 px-2.5 py-0.5 rounded-full font-bold">
+                                                    Low-Budget Mode
+                                                </span>
+                                            </h3>
+                                            <p className="text-gray-400 text-sm mt-1">{report.project_summary}</p>
+                                        </div>
+
+                                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                                            <div className="bg-gray-900 border-2 border-emerald-500 px-5 py-3 rounded-2xl text-right shadow-lg shadow-emerald-500/10">
+                                                <span className="text-xs text-emerald-400 block font-bold uppercase tracking-wider">Exact Cost Effective Total (INR ₹)</span>
+                                                <span className="text-2xl font-black text-emerald-400">
+                                                    {curr.symbol}{(computedGrandTotalINR * curr.rate).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} {selectedCurrency}
+                                                </span>
+                                            </div>
+                                            <button 
+                                                onClick={handleDownloadPDF}
+                                                className="px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold flex items-center gap-2 shadow-lg shadow-emerald-600/20 transition"
+                                            >
+                                                📄 Download PDF Report
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    {/* Section 2: Financial Summary Metric Cards */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div className="bg-gray-900/90 border border-gray-800 p-4 rounded-xl space-y-1">
+                                            <span className="text-xs text-gray-400 uppercase font-semibold">Low-Budget Raw Subtotal</span>
+                                            <div className="text-xl font-bold text-gray-200">
+                                                {curr.symbol}{(computedRawSubtotalINR * curr.rate).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                                            </div>
+                                            <span className="text-[11px] text-gray-500 block">Sum of itemized low-cost raw metal & components</span>
+                                        </div>
+                                        <div className="bg-gray-900/90 border border-gray-800 p-4 rounded-xl space-y-1">
+                                            <span className="text-xs text-gray-400 uppercase font-semibold">Est. Workshop Fabrication (15%)</span>
+                                            <div className="text-xl font-bold text-amber-300">
+                                                {curr.symbol}{(computedLaborINR * curr.rate).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                                            </div>
+                                            <span className="text-[11px] text-gray-500 block">Minimal cutting, welding & manual assembly labor</span>
+                                        </div>
+                                        <div className="bg-emerald-950/60 border border-emerald-600 p-4 rounded-xl space-y-1 shadow-lg shadow-emerald-950/50">
+                                            <span className="text-xs text-emerald-400 uppercase font-bold">Cost Effective Grand Total</span>
+                                            <div className="text-2xl font-black text-emerald-400">
+                                                {curr.symbol}{(computedGrandTotalINR * curr.rate).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} {selectedCurrency}
+                                            </div>
+                                            <span className="text-[11px] text-emerald-300/80 block">All-inclusive low-budget calculated project cost</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Cost Optimization Strategies Panel */}
+                                    {report.cost_saving_strategies && report.cost_saving_strategies.length > 0 && (
+                                        <div className="bg-emerald-950/30 border border-emerald-800/60 rounded-xl p-5 space-y-3">
+                                            <h4 className="font-bold text-emerald-400 text-sm flex items-center gap-2">
+                                                💡 Key Cost-Optimization Strategies (How Savings were Achieved)
+                                            </h4>
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                                {report.cost_saving_strategies.map((tip, tIdx) => (
+                                                    <div key={tIdx} className="bg-gray-900/80 border border-emerald-900/50 rounded-lg p-3 space-y-1">
+                                                        <span className="text-xs font-bold text-emerald-300 uppercase">{tip.category}</span>
+                                                        <p className="text-xs text-gray-300">{tip.tip}</p>
+                                                        <span className="text-[11px] font-bold text-emerald-400 block pt-1">
+                                                            Est. Savings: {curr.symbol}{(tip.estimated_savings_inr * curr.rate).toLocaleString()}
+                                                        </span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Section 2: Exact Itemized Pricing Table */}
+                                    <div className="space-y-4 pt-2">
+                                        <div className="flex items-center justify-between">
+                                            <h4 className="font-bold text-white text-base flex items-center gap-2">
+                                                <span className="p-1 bg-emerald-950 text-emerald-400 rounded">₹</span>
+                                                Low-Budget Itemized Cost Table (in Indian Rupees ₹)
+                                            </h4>
+                                            <span className="text-xs text-gray-400">💡 Edit unit price values below to calculate custom quotation totals!</span>
+                                        </div>
+
+                                        <div className="overflow-x-auto rounded-xl border border-gray-800">
+                                            <table className="w-full text-left text-sm text-gray-300">
+                                                <thead className="bg-gray-900 text-xs text-gray-400 uppercase font-semibold border-b border-gray-800">
+                                                    <tr>
+                                                        <th className="px-4 py-3">Material Component</th>
+                                                        <th className="px-4 py-3">Quantity</th>
+                                                        <th className="px-4 py-3">Exact Unit Price ({curr.symbol})</th>
+                                                        <th className="px-4 py-3 text-right">Exact Total Price ({curr.symbol})</th>
+                                                        <th className="px-4 py-3">Cost-Effective Low-Budget Substitute & Note</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody className="divide-y divide-gray-800">
+                                                    {report.materials.map((mat, idx) => {
+                                                        const itemCost = getComputedItemCostINR(mat, idx);
+                                                        const currentUnitINR = itemCost.unitINR;
+                                                        return (
+                                                            <tr key={idx} className="hover:bg-gray-900/60 transition">
+                                                                <td className="px-4 py-3 font-semibold text-white">
+                                                                    {mat.item_name}
+                                                                    <span className="block text-xs font-mono text-cyan-400 font-normal">{mat.grade}</span>
+                                                                </td>
+                                                                <td className="px-4 py-3 font-medium text-amber-300 text-xs">{mat.quantity}</td>
+                                                                <td className="px-4 py-3 text-xs">
+                                                                    <div className="flex items-center gap-1 bg-gray-900 border border-gray-700 rounded px-2.5 py-1 w-36">
+                                                                        <span className="text-gray-400 font-mono font-bold">{curr.symbol}</span>
+                                                                        <input 
+                                                                            type="number" 
+                                                                            step="1"
+                                                                            value={Math.round(currentUnitINR * curr.rate)}
+                                                                            onChange={(e) => {
+                                                                                const val = parseFloat(e.target.value) || 0;
+                                                                                setCustomUnitPricesINR({ ...customUnitPricesINR, [idx]: val / curr.rate });
+                                                                            }}
+                                                                            className="w-full bg-transparent text-emerald-400 font-mono font-bold focus:outline-none"
+                                                                        />
+                                                                    </div>
+                                                                </td>
+                                                                <td className="px-4 py-3 text-right font-mono font-bold text-emerald-400 text-base">
+                                                                    {curr.symbol}{itemCost.totalPrice}
+                                                                </td>
+                                                                <td className="px-4 py-3 text-xs max-w-xs space-y-1">
+                                                                    {mat.low_budget_option && (
+                                                                        <span className="block text-[11px] font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2 py-0.5 rounded">
+                                                                            ⚡ {mat.low_budget_option}
+                                                                        </span>
+                                                                    )}
+                                                                    <span className="block text-gray-400">{mat.cost_note || "Commercial Indian supplier market rate"}</span>
+                                                                </td>
+                                                            </tr>
+                                                        );
+                                                    })}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* SECTION 3: Material Specifications Matrix */}
+                                <div className="glass-panel rounded-2xl p-6 sm:p-8 space-y-6">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-bold uppercase tracking-wider">
+                                        <span>SECTION 3</span> • Material Specifications Matrix & Standards
+                                    </div>
+                                    
+                                    <div className="overflow-x-auto rounded-xl border border-gray-800">
+                                        <table className="w-full text-left text-sm text-gray-300">
+                                            <thead className="bg-gray-900 text-xs text-gray-400 uppercase font-semibold border-b border-gray-800">
+                                                <tr>
+                                                    <th className="px-4 py-3">Material Component</th>
+                                                    <th className="px-4 py-3">Engineering Spec / Grade</th>
+                                                    <th className="px-4 py-3">Dimensions & Size</th>
+                                                    <th className="px-4 py-3">Qty</th>
+                                                    <th className="px-4 py-3">Purpose & Engineering Function</th>
+                                                    <th className="px-4 py-3">Alternative Materials</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-gray-800">
+                                                {report.materials.map((mat, idx) => (
+                                                    <tr key={idx} className="hover:bg-gray-900/50 transition">
+                                                        <td className="px-4 py-3 font-semibold text-white">{mat.item_name}</td>
+                                                        <td className="px-4 py-3 font-mono text-xs text-cyan-300 bg-cyan-950/30 rounded">{mat.grade}</td>
+                                                        <td className="px-4 py-3 text-xs">{mat.dimensions}</td>
+                                                        <td className="px-4 py-3 font-medium text-amber-300 text-xs">{mat.quantity}</td>
+                                                        <td className="px-4 py-3 text-xs max-w-xs">{mat.purpose}</td>
+                                                        <td className="px-4 py-3 text-xs text-gray-400">
+                                                            <ul className="list-disc list-inside">
+                                                                {mat.alternatives.map((alt, aIdx) => <li key={aIdx}>{alt}</li>)}
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                {/* SECTION 4: Tools & Manufacturing Processes */}
+                                <div className="glass-panel rounded-2xl p-6 sm:p-8 space-y-6">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950 text-blue-400 border border-blue-800 text-xs font-bold uppercase tracking-wider">
+                                        <span>SECTION 4</span> • Required Tools & Manufacturing Operations
+                                    </div>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="bg-gray-900/70 border border-gray-800 rounded-xl p-5 space-y-4">
+                                            <h4 className="font-bold text-white text-base flex items-center gap-2">
+                                                🛠️ Required Tools & Equipment
+                                            </h4>
+                                            <ul className="space-y-2 text-sm text-gray-300">
+                                                {report.tools_and_equipment.map((tool, tIdx) => (
+                                                    <li key={tIdx} className="flex items-start gap-2">
+                                                        <span className="text-cyan-400 mt-0.5">•</span>
+                                                        <span>{tool}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <div className="bg-gray-900/70 border border-gray-800 rounded-xl p-5 space-y-4">
+                                            <h4 className="font-bold text-white text-base flex items-center gap-2">
+                                                ⚙️ Manufacturing & Machining Operations
+                                            </h4>
+                                            <ul className="space-y-2 text-sm text-gray-300">
+                                                {report.manufacturing_processes.map((proc, pIdx) => (
+                                                    <li key={pIdx} className="flex items-start gap-2">
+                                                        <span className="text-blue-400 mt-0.5">•</span>
+                                                        <span>{proc}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* SECTION 5: Safety Guidelines & Step-by-Step Assembly */}
+                                <div className="glass-panel rounded-2xl p-6 sm:p-8 space-y-6">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950 text-amber-400 border border-amber-800 text-xs font-bold uppercase tracking-wider">
+                                        <span>SECTION 5</span> • Safety Guidelines & Assembly Timeline
+                                    </div>
+
+                                    <div className="space-y-6">
+                                        <div className="bg-amber-950/20 border border-amber-800/50 rounded-xl p-5 space-y-3">
+                                            <h4 className="font-bold text-amber-400 text-base">
+                                                ⚠️ Safety Precautions & Hazard Controls
+                                            </h4>
+                                            <ul className="space-y-2 text-sm text-amber-200/80">
+                                                {report.safety_precautions.map((safe, sIdx) => (
+                                                    <li key={sIdx} className="flex items-start gap-2">
+                                                        <span className="font-bold">•</span>
+                                                        <span>{safe}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <div className="space-y-4">
+                                            <h4 className="font-bold text-white text-base">Step-by-Step Assembly Procedure</h4>
+                                            <div className="space-y-3">
+                                                {report.assembly_procedure.map((step, stIdx) => (
+                                                    <div key={stIdx} className="flex items-start gap-4 bg-gray-900/60 border border-gray-800 rounded-xl p-4">
+                                                        <span className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-bold text-xs flex items-center justify-center">
+                                                            {stIdx + 1}
+                                                        </span>
+                                                        <p className="text-sm text-gray-200 mt-1">{step}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </main>
+
+                    {/* History Sidebar Modal */}
+                    {showHistory && (
+                        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex justify-end">
+                            <div className="w-full max-w-md bg-gray-900 border-l border-gray-800 p-6 flex flex-col justify-between space-y-4">
+                                <div className="flex items-center justify-between border-b border-gray-800 pb-4">
+                                    <h3 className="text-lg font-bold text-white">Saved Project History</h3>
+                                    <button onClick={() => setShowHistory(false)} className="text-gray-400 hover:text-white">✕</button>
+                                </div>
+
+                                <div className="flex-grow overflow-y-auto space-y-3 pr-1 custom-scrollbar">
+                                    {history.length === 0 ? (
+                                        <p className="text-gray-500 text-sm">No saved projects yet.</p>
+                                    ) : (
+                                        history.map((item) => (
+                                            <div 
+                                                key={item.id} 
+                                                onClick={() => {
+                                                    setActiveRecord(item);
+                                                    setShowHistory(false);
+                                                }}
+                                                className={`p-4 rounded-xl border cursor-pointer transition flex items-center justify-between ${activeRecord && activeRecord.id === item.id ? 'bg-emerald-950/40 border-emerald-500' : 'bg-gray-800/60 border-gray-700 hover:border-gray-500'}`}
+                                            >
+                                                <div>
+                                                    <h4 className="font-semibold text-white text-sm">{item.project_name}</h4>
+                                                    <span className="text-xs text-gray-400">{item.created_at}</span>
+                                                </div>
+                                                <button 
+                                                    onClick={(e) => handleDeleteHistory(item.id, e)}
+                                                    className="p-1.5 text-gray-500 hover:text-red-400 rounded-lg hover:bg-gray-700"
+                                                >
+                                                    🗑️
+                                                </button>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Chatbot Drawer */}
+                    {chatOpen && (
+                        <div className="fixed bottom-6 right-6 w-96 max-w-[calc(100vw-3rem)] h-[520px] bg-gray-900 border border-emerald-700 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden">
+                            <div className="bg-gray-800 p-4 border-b border-gray-700 flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></div>
+                                    <h4 className="font-bold text-white text-sm">Engineering AI Assistant</h4>
+                                </div>
+                                <button onClick={() => setChatOpen(false)} className="text-gray-400 hover:text-white">✕</button>
+                            </div>
+
+                            <div className="flex-grow p-4 overflow-y-auto space-y-3 custom-scrollbar text-xs">
+                                {chatMessages.map((m, idx) => (
+                                    <div key={idx} className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'}`}>
+                                        <div className={`p-3 rounded-xl max-w-[85%] ${m.role === 'user' ? 'bg-emerald-600 text-white' : 'bg-gray-800 text-gray-200 border border-gray-700'}`}>
+                                            {m.content}
+                                        </div>
+                                        {m.followups && (
+                                            <div className="mt-2 space-y-1">
+                                                {m.followups.map((f, fIdx) => (
+                                                    <button 
+                                                        key={fIdx} 
+                                                        onClick={() => handleSendChat(f)}
+                                                        className="block text-left text-[11px] text-emerald-400 hover:underline bg-emerald-950/40 border border-emerald-900 rounded px-2 py-1"
+                                                    >
+                                                        👉 {f}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                                {chatLoading && (
+                                    <div className="text-gray-500 italic text-xs">AI is computing answer...</div>
+                                )}
+                                <div ref={chatEndRef} />
+                            </div>
+
+                            <div className="p-3 bg-gray-800/80 border-t border-gray-700 flex gap-2">
+                                <input 
+                                    type="text" 
+                                    value={chatInput}
+                                    onChange={(e) => setChatInput(e.target.value)}
+                                    onKeyDown={(e) => e.key === 'Enter' && handleSendChat()}
+                                    placeholder="Ask about low-budget material substitutes in INR (₹)..."
+                                    className="flex-grow bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                                />
+                                <button 
+                                    onClick={() => handleSendChat()}
+                                    className="px-3 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-semibold"
+                                >
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Footer */}
+                    <footer className="border-t border-gray-800 py-4 text-center text-xs text-gray-500">
+                        Mechanical Material Recommendation System • Low-Budget Cost-Effective Material Engine
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+</html>

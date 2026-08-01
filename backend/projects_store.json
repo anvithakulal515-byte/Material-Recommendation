@@ -1,0 +1,1622 @@
+{
+  "23d45428": {
+    "id": "23d45428",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:20:33",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 / S275 Structural Steel Rectangular Hollow Section",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & CK45 Chrome Plated Rod",
+          "dimensions": "Bore 80mm, Rod Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts hydraulic fluid pressure (200 Bar) into linear force for scissors extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "Hard Chrome AISI 1045"
+          ],
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bushes",
+          "grade": "AISI 4140 Alloy Steel (Quenched & Tempered) + Self-lubricated Bronze Bushes",
+          "dimensions": "Pin Dia 35mm, Length 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arms and base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Oilite Sintered Bronze"
+          ],
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0
+        },
+        {
+          "item_name": "Base Frame & Top Deck Plate",
+          "grade": "ASTM A36 Steel Channel (C100x50) & Chequered Steel Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate (light load)"
+          ],
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0
+        },
+        {
+          "item_name": "Hydraulic Power Unit & Valves",
+          "grade": "3kW Electric Motor, 210 Bar Gear Pump, Solenoid Valves & Reservoir",
+          "dimensions": "25-liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Electro-Hydraulic Pack"
+          ],
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "total_estimated_cost_usd": 2560.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "4abb2cf2": {
+    "id": "4abb2cf2",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:22:59",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 / S275 Structural Steel Rectangular Hollow Section",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & CK45 Chrome Plated Rod",
+          "dimensions": "Bore 80mm, Rod Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts hydraulic fluid pressure (200 Bar) into linear force for scissors extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "Hard Chrome AISI 1045"
+          ],
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bushes",
+          "grade": "AISI 4140 Alloy Steel (Quenched & Tempered) + Self-lubricated Bronze Bushes",
+          "dimensions": "Pin Dia 35mm, Length 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arms and base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Oilite Sintered Bronze"
+          ],
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0
+        },
+        {
+          "item_name": "Base Frame & Top Deck Plate",
+          "grade": "ASTM A36 Steel Channel (C100x50) & Chequered Steel Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate (light load)"
+          ],
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0
+        },
+        {
+          "item_name": "Hydraulic Power Unit & Valves",
+          "grade": "3kW Electric Motor, 210 Bar Gear Pump, Solenoid Valves & Reservoir",
+          "dimensions": "25-liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Electro-Hydraulic Pack"
+          ],
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "total_estimated_cost_usd": 2560.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "b60b4c99": {
+    "id": "b60b4c99",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:23:01",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 / S275 Structural Steel Rectangular Hollow Section",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & CK45 Chrome Plated Rod",
+          "dimensions": "Bore 80mm, Rod Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts hydraulic fluid pressure (200 Bar) into linear force for scissors extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "Hard Chrome AISI 1045"
+          ],
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bushes",
+          "grade": "AISI 4140 Alloy Steel (Quenched & Tempered) + Self-lubricated Bronze Bushes",
+          "dimensions": "Pin Dia 35mm, Length 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arms and base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Oilite Sintered Bronze"
+          ],
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0
+        },
+        {
+          "item_name": "Base Frame & Top Deck Plate",
+          "grade": "ASTM A36 Steel Channel (C100x50) & Chequered Steel Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate (light load)"
+          ],
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0
+        },
+        {
+          "item_name": "Hydraulic Power Unit & Valves",
+          "grade": "3kW Electric Motor, 210 Bar Gear Pump, Solenoid Valves & Reservoir",
+          "dimensions": "25-liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Electro-Hydraulic Pack"
+          ],
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "total_estimated_cost_usd": 2560.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "f1cb7cf3": {
+    "id": "f1cb7cf3",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:23:09",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 / S275 Structural Steel Rectangular Hollow Section",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & CK45 Chrome Plated Rod",
+          "dimensions": "Bore 80mm, Rod Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts hydraulic fluid pressure (200 Bar) into linear force for scissors extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "Hard Chrome AISI 1045"
+          ],
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bushes",
+          "grade": "AISI 4140 Alloy Steel (Quenched & Tempered) + Self-lubricated Bronze Bushes",
+          "dimensions": "Pin Dia 35mm, Length 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arms and base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Oilite Sintered Bronze"
+          ],
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0
+        },
+        {
+          "item_name": "Base Frame & Top Deck Plate",
+          "grade": "ASTM A36 Steel Channel (C100x50) & Chequered Steel Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate (light load)"
+          ],
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0
+        },
+        {
+          "item_name": "Hydraulic Power Unit & Valves",
+          "grade": "3kW Electric Motor, 210 Bar Gear Pump, Solenoid Valves & Reservoir",
+          "dimensions": "25-liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Electro-Hydraulic Pack"
+          ],
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "total_estimated_cost_usd": 2560.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "1b1a8f06": {
+    "id": "1b1a8f06",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:23:09",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 / S275 Structural Steel Rectangular Hollow Section",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & CK45 Chrome Plated Rod",
+          "dimensions": "Bore 80mm, Rod Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts hydraulic fluid pressure (200 Bar) into linear force for scissors extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "Hard Chrome AISI 1045"
+          ],
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bushes",
+          "grade": "AISI 4140 Alloy Steel (Quenched & Tempered) + Self-lubricated Bronze Bushes",
+          "dimensions": "Pin Dia 35mm, Length 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arms and base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Oilite Sintered Bronze"
+          ],
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0
+        },
+        {
+          "item_name": "Base Frame & Top Deck Plate",
+          "grade": "ASTM A36 Steel Channel (C100x50) & Chequered Steel Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate (light load)"
+          ],
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0
+        },
+        {
+          "item_name": "Hydraulic Power Unit & Valves",
+          "grade": "3kW Electric Motor, 210 Bar Gear Pump, Solenoid Valves & Reservoir",
+          "dimensions": "25-liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Electro-Hydraulic Pack"
+          ],
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "total_estimated_cost_usd": 2560.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "3dfefd71": {
+    "id": "3dfefd71",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:27:07",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 / S275 Structural Steel Rectangular Hollow Section",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & CK45 Chrome Plated Rod",
+          "dimensions": "Bore 80mm, Rod Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts hydraulic fluid pressure (200 Bar) into linear force for scissors extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "Hard Chrome AISI 1045"
+          ],
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bushes",
+          "grade": "AISI 4140 Alloy Steel (Quenched & Tempered) + Self-lubricated Bronze Bushes",
+          "dimensions": "Pin Dia 35mm, Length 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arms and base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Oilite Sintered Bronze"
+          ],
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0
+        },
+        {
+          "item_name": "Base Frame & Top Deck Plate",
+          "grade": "ASTM A36 Steel Channel (C100x50) & Chequered Steel Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate (light load)"
+          ],
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0
+        },
+        {
+          "item_name": "Hydraulic Power Unit & Valves",
+          "grade": "3kW Electric Motor, 210 Bar Gear Pump, Solenoid Valves & Reservoir",
+          "dimensions": "25-liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Electro-Hydraulic Pack"
+          ],
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "total_estimated_cost_usd": 2560.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "92ed1b17": {
+    "id": "92ed1b17",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:29:04",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 Rectangular Hollow Section (S275)",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0,
+          "cost_note": "$120.00 / 1.5m profile section based on structural steel raw market rate"
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & CK45 Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & Hard Chrome CK45 Rod",
+          "dimensions": "Bore 80mm, Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts 200 Bar fluid pressure into linear force for scissor extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "AISI 1045 Honed Tube"
+          ],
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0,
+          "cost_note": "$350.00 / complete honed cylinder assembly with polyurethane seals"
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bronze Bushes",
+          "grade": "AISI 4140 Alloy Steel (Q&T) + Oilite Sintered Bronze",
+          "dimensions": "Pin Dia 35mm x 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arm nodes to base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Self-lubricating PTFE Bushings"
+          ],
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0,
+          "cost_note": "$35.00 / pin & bush set (turned, ground and heat-treated)"
+        },
+        {
+          "item_name": "Base Channel Frame & Chequered Top Deck",
+          "grade": "ASTM A36 Steel Channel (C100x50) & 6mm Diamond Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate"
+          ],
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0,
+          "cost_note": "$450.00 / raw channel steel & sheet stock lot price"
+        },
+        {
+          "item_name": "Hydraulic Power Pack (3kW Motor & Gear Pump)",
+          "grade": "3kW Electric Motor, 210 Bar Gear Pump, Solenoid Valves & Reservoir",
+          "dimensions": "25-Liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Electro-Hydraulic Pack"
+          ],
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0,
+          "cost_note": "$650.00 / integrated power unit complete with relief valves"
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "raw_material_subtotal_usd": 2560.0,
+      "estimated_machining_and_labor_usd": 390.0,
+      "total_estimated_cost_usd": 2950.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "9c903aeb": {
+    "id": "9c903aeb",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:30:26",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 Rectangular Hollow Section (S275)",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0,
+          "cost_note": "$120.00 / 1.5m profile section based on structural steel raw market rate"
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & CK45 Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & Hard Chrome CK45 Rod",
+          "dimensions": "Bore 80mm, Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts 200 Bar fluid pressure into linear force for scissor extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "AISI 1045 Honed Tube"
+          ],
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0,
+          "cost_note": "$350.00 / complete honed cylinder assembly with polyurethane seals"
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bronze Bushes",
+          "grade": "AISI 4140 Alloy Steel (Q&T) + Oilite Sintered Bronze",
+          "dimensions": "Pin Dia 35mm x 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arm nodes to base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Self-lubricating PTFE Bushings"
+          ],
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0,
+          "cost_note": "$35.00 / pin & bush set (turned, ground and heat-treated)"
+        },
+        {
+          "item_name": "Base Channel Frame & Chequered Top Deck",
+          "grade": "ASTM A36 Steel Channel (C100x50) & 6mm Diamond Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate"
+          ],
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0,
+          "cost_note": "$450.00 / raw channel steel & sheet stock lot price"
+        },
+        {
+          "item_name": "Hydraulic Power Pack (3kW Motor & Gear Pump)",
+          "grade": "3kW Electric Motor, 210 Bar Gear Pump, Solenoid Valves & Reservoir",
+          "dimensions": "25-Liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Electro-Hydraulic Pack"
+          ],
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0,
+          "cost_note": "$650.00 / integrated power unit complete with relief valves"
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "raw_material_subtotal_usd": 2560.0,
+      "estimated_machining_and_labor_usd": 390.0,
+      "total_estimated_cost_usd": 2950.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "52bc17f6": {
+    "id": "52bc17f6",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:30:28",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 Rectangular Hollow Section (S275)",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0,
+          "cost_note": "$120.00 / 1.5m profile section based on structural steel raw market rate"
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & CK45 Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & Hard Chrome CK45 Rod",
+          "dimensions": "Bore 80mm, Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts 200 Bar fluid pressure into linear force for scissor extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "AISI 1045 Honed Tube"
+          ],
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0,
+          "cost_note": "$350.00 / complete honed cylinder assembly with polyurethane seals"
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bronze Bushes",
+          "grade": "AISI 4140 Alloy Steel (Q&T) + Oilite Sintered Bronze",
+          "dimensions": "Pin Dia 35mm x 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arm nodes to base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Self-lubricating PTFE Bushings"
+          ],
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0,
+          "cost_note": "$35.00 / pin & bush set (turned, ground and heat-treated)"
+        },
+        {
+          "item_name": "Base Channel Frame & Chequered Top Deck",
+          "grade": "ASTM A36 Steel Channel (C100x50) & 6mm Diamond Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate"
+          ],
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0,
+          "cost_note": "$450.00 / raw channel steel & sheet stock lot price"
+        },
+        {
+          "item_name": "Hydraulic Power Pack (3kW Motor & Gear Pump)",
+          "grade": "3kW Electric Motor, 210 Bar Gear Pump, Solenoid Valves & Reservoir",
+          "dimensions": "25-Liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Electro-Hydraulic Pack"
+          ],
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0,
+          "cost_note": "$650.00 / integrated power unit complete with relief valves"
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "raw_material_subtotal_usd": 2560.0,
+      "estimated_machining_and_labor_usd": 390.0,
+      "total_estimated_cost_usd": 2950.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "5812f496": {
+    "id": "5812f496",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:34:42",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 Rectangular Hollow Section (IS 2062)",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_inr": 10380.0,
+          "total_cost_inr": 41520.0,
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0,
+          "cost_note": "\u20b910,380 / 1.5m section based on Indian IS 2062 structural steel rate"
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & CK45 Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & Hard Chrome CK45 Rod",
+          "dimensions": "Bore 80mm, Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts 200 Bar fluid pressure into linear force for scissor extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "AISI 1045 Honed Tube"
+          ],
+          "unit_cost_inr": 30275.0,
+          "total_cost_inr": 60550.0,
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0,
+          "cost_note": "\u20b930,275 / complete honed hydraulic cylinder with seals"
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bronze Bushes",
+          "grade": "AISI 4140 Alloy Steel (Q&T) + Sintered Bronze",
+          "dimensions": "Pin Dia 35mm x 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arm nodes to base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Self-lubricating PTFE Bushings"
+          ],
+          "unit_cost_inr": 3027.5,
+          "total_cost_inr": 24220.0,
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0,
+          "cost_note": "\u20b93,027 / ground and heat-treated pin & bush set"
+        },
+        {
+          "item_name": "Base Channel Frame & Chequered Top Deck",
+          "grade": "IS 2062 Steel Channel (ISMC 100) & 6mm Chequered Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate"
+          ],
+          "unit_cost_inr": 38925.0,
+          "total_cost_inr": 38925.0,
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0,
+          "cost_note": "\u20b938,925 / ISMC channel & anti-skid steel plate assembly"
+        },
+        {
+          "item_name": "Hydraulic Power Pack (3kW Motor & Pump)",
+          "grade": "3kW 3-Phase Motor, 210 Bar Gear Pump & Reservoir",
+          "dimensions": "25-Liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Hydraulic Unit"
+          ],
+          "unit_cost_inr": 56225.0,
+          "total_cost_inr": 56225.0,
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0,
+          "cost_note": "\u20b956,225 / integrated 3kW power pack with manifold"
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "raw_material_subtotal_inr": 221440.0,
+      "estimated_machining_and_labor_inr": 33735.0,
+      "total_estimated_cost_inr": 255175.0,
+      "raw_material_subtotal_usd": 2560.0,
+      "estimated_machining_and_labor_usd": 390.0,
+      "total_estimated_cost_usd": 2950.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "f6196463": {
+    "id": "f6196463",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:35:17",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Scissor mechanism heavy-duty hydraulic lifting platform designed for 2-ton vertical payload capacity with dual hydraulic cylinders, safety velocity fuses, and structural steel linkage.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Steel Scissor Arms",
+          "grade": "ASTM A36 Rectangular Hollow Section (IS 2062)",
+          "dimensions": "100mm x 50mm x 6mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic piston thrust into vertical motion",
+          "alternatives": [
+            "ST52-3 Rectangular Tube",
+            "AISI 1020 Structural Steel"
+          ],
+          "unit_cost_inr": 10380.0,
+          "total_cost_inr": 41520.0,
+          "unit_cost_usd": 120.0,
+          "total_cost_usd": 480.0,
+          "cost_note": "\u20b910,380 / 1.5m section based on Indian IS 2062 structural steel rate"
+        },
+        {
+          "item_name": "Hydraulic Cylinder Barrel & CK45 Rod",
+          "grade": "ST52.3 Honed Cylinder Barrel & Hard Chrome CK45 Rod",
+          "dimensions": "Bore 80mm, Rod 50mm, Stroke 600mm",
+          "quantity": "2 units",
+          "purpose": "Converts 200 Bar fluid pressure into linear force for scissor extension",
+          "alternatives": [
+            "EN 10305-1 E355",
+            "AISI 1045 Honed Tube"
+          ],
+          "unit_cost_inr": 30275.0,
+          "total_cost_inr": 60550.0,
+          "unit_cost_usd": 350.0,
+          "total_cost_usd": 700.0,
+          "cost_note": "\u20b930,275 / complete honed hydraulic cylinder with seals"
+        },
+        {
+          "item_name": "Pivot Shaft Pins & Bronze Bushes",
+          "grade": "AISI 4140 Alloy Steel (Q&T) + Sintered Bronze",
+          "dimensions": "Pin Dia 35mm x 180mm; Bush 35mm ID x 45mm OD",
+          "quantity": "8 sets",
+          "purpose": "High-shear pivot points connecting scissor arm nodes to base frame",
+          "alternatives": [
+            "EN19 Chrome-Moly",
+            "Self-lubricating PTFE Bushings"
+          ],
+          "unit_cost_inr": 3027.5,
+          "total_cost_inr": 24220.0,
+          "unit_cost_usd": 35.0,
+          "total_cost_usd": 280.0,
+          "cost_note": "\u20b93,027 / ground and heat-treated pin & bush set"
+        },
+        {
+          "item_name": "Base Channel Frame & Chequered Top Deck",
+          "grade": "IS 2062 Steel Channel (ISMC 100) & 6mm Chequered Plate",
+          "dimensions": "Frame: 2000x1000mm; Plate 6mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural foundation and anti-skid load bearing platform surface",
+          "alternatives": [
+            "S355JR Channel Steel",
+            "Aluminum Diamond Plate"
+          ],
+          "unit_cost_inr": 38925.0,
+          "total_cost_inr": 38925.0,
+          "unit_cost_usd": 450.0,
+          "total_cost_usd": 450.0,
+          "cost_note": "\u20b938,925 / ISMC channel & anti-skid steel plate assembly"
+        },
+        {
+          "item_name": "Hydraulic Power Pack (3kW Motor & Pump)",
+          "grade": "3kW 3-Phase Motor, 210 Bar Gear Pump & Reservoir",
+          "dimensions": "25-Liter Reservoir tank, 4.2 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates pressurized hydraulic fluid flow and directional control",
+          "alternatives": [
+            "Manual Foot Pump Unit",
+            "12V DC Hydraulic Unit"
+          ],
+          "unit_cost_inr": 56225.0,
+          "total_cost_inr": 56225.0,
+          "unit_cost_usd": 650.0,
+          "total_cost_usd": 650.0,
+          "cost_note": "\u20b956,225 / integrated 3kW power pack with manifold"
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG / MAG Welding Machine (250A minimum)",
+        "Precision Hydraulic Torque Wrench",
+        "Angle Grinder with Cutting & Slag Removal Wheels",
+        "Magnetic Base Column Drill Press",
+        "Hydraulic Hose Crimping Machine",
+        "Digital Dial Indicators for Parallelism Alignment"
+      ],
+      "manufacturing_processes": [
+        "CNC Plasma / Laser Cutting of Channel and Plate",
+        "Precision Reaming of Scissor Pivot Holes (H7 Tolerance)",
+        "TIG / MIG Welding conforming to AWS D1.1 Standard",
+        "Hard Chrome Plating of Pivot Pins",
+        "Shot Blasting and Epoxy Powder Coating Frame"
+      ],
+      "safety_precautions": [
+        "Install dual velocity check valves directly on cylinder ports to prevent free-fall on hose rupture",
+        "Equip mechanical maintenance safety lock bars (chocks) before servicing under raised platform",
+        "Ensure 3:1 safety factor on yield strength for structural scissor arm calculations",
+        "Equip perimeter safety touch-edges to cut motor power automatically upon obstruction"
+      ],
+      "assembly_procedure": [
+        "Step 1: Fabricate and square lower base frame and upper platform frame with diagonal tolerance < 1mm.",
+        "Step 2: Bore scissor arm pivot holes using a fixture to guarantee axial concentricity.",
+        "Step 3: Press-fit self-lubricating bronze bushes into scissor arm pivot eyes.",
+        "Step 4: Assemble lower scissor linkages to base guide tracks using roller bearings.",
+        "Step 5: Mount hydraulic cylinders to lower clevis brackets with hardened alloy steel pins.",
+        "Step 6: Route high-pressure hydraulic hoses with burst protection sleeves to control manifold.",
+        "Step 7: Perform static load testing at 125% rated capacity and calibrate pressure relief valve."
+      ],
+      "raw_material_subtotal_inr": 221440.0,
+      "estimated_machining_and_labor_inr": 33735.0,
+      "total_estimated_cost_inr": 255175.0,
+      "raw_material_subtotal_usd": 2560.0,
+      "estimated_machining_and_labor_usd": 390.0,
+      "total_estimated_cost_usd": 2950.0,
+      "key_design_considerations": [
+        "Buckling resistance of long hydraulic piston rod under maximum compression stroke",
+        "Hertzian contact stress analysis at scissor roller guide channels",
+        "Shear stress distribution on 4140 center pivot pins under full asymmetrical payload"
+      ]
+    }
+  },
+  "6b0708b3": {
+    "id": "6b0708b3",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:51:46",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Cost-effective scissor lifting platform optimized with commercial grade IS 2062 mild steel profiles, standard hydraulic cylinders, and self-lubricating polymer bushings.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Scissor Arms",
+          "grade": "IS 2062 Grade E250 ERW Rectangular Hollow Section",
+          "dimensions": "100mm x 50mm x 4.5mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic thrust into vertical lifting motion",
+          "alternatives": [
+            "ASTM A36 Steel",
+            "Structural Angle Channel"
+          ],
+          "low_budget_option": "ERW Mild Steel RHS (E250) - 35% cheaper than seamless ST52 tubes",
+          "unit_cost_inr": 5882.0,
+          "total_cost_inr": 23528.0,
+          "unit_cost_usd": 68.0,
+          "total_cost_usd": 272.0,
+          "cost_note": "\u20b95,882 / profile section using commercial ERW mild steel"
+        },
+        {
+          "item_name": "Hydraulic Cylinder & CK45 Chrome Rod",
+          "grade": "Standard Agricultural ISO 6020 Hydraulic Cylinder",
+          "dimensions": "Bore 70mm, Rod 40mm, Stroke 500mm",
+          "quantity": "2 units",
+          "purpose": "Converts 160 Bar hydraulic pressure into linear lifting force",
+          "alternatives": [
+            "Custom Heavy Honed Cylinder"
+          ],
+          "low_budget_option": "Standard Off-the-Shelf Agricultural Cylinder - Saves 45% vs custom CNC cylinder",
+          "unit_cost_inr": 15570.0,
+          "total_cost_inr": 31140.0,
+          "unit_cost_usd": 180.0,
+          "total_cost_usd": 360.0,
+          "cost_note": "\u20b915,570 / mass-produced off-the-shelf cylinder unit"
+        },
+        {
+          "item_name": "Pivot Pins & Self-Lubricating Bushings",
+          "grade": "EN8 (080M40) Medium Carbon Steel Pins + Igus Polymer Bushes",
+          "dimensions": "Pin Dia 30mm x 160mm; Bush 30mm ID",
+          "quantity": "8 sets",
+          "purpose": "Rotational pivot joints connecting scissor arms to base guide tracks",
+          "alternatives": [
+            "AISI 4140 Hardened Chrome-Moly"
+          ],
+          "low_budget_option": "EN8 turned pins with Igutex self-lubricating polymer bushes (eliminates grease nipples)",
+          "unit_cost_inr": 1557.0,
+          "total_cost_inr": 12456.0,
+          "unit_cost_usd": 18.0,
+          "total_cost_usd": 144.0,
+          "cost_note": "\u20b91,557 / turned EN8 pin & engineering polymer bush set"
+        },
+        {
+          "item_name": "Base Channel Frame & Top Deck Plate",
+          "grade": "ISMC 100 Structural Steel Channel & 4mm Mild Steel Sheet",
+          "dimensions": "Frame: 1800x900mm; Plate 4mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural base and load platform",
+          "alternatives": [
+            "ASTM A36 Heavy Channel"
+          ],
+          "low_budget_option": "ISMC 100 Channel frame with stiffener ribs - Reduces plate thickness from 6mm to 4mm",
+          "unit_cost_inr": 20760.0,
+          "total_cost_inr": 20760.0,
+          "unit_cost_usd": 240.0,
+          "total_cost_usd": 240.0,
+          "cost_note": "\u20b920,760 / ISMC channel steel frame & stiffened sheet deck"
+        },
+        {
+          "item_name": "Hydraulic Power Pack Unit",
+          "grade": "2.2kW Single-Phase Motor & 160 Bar Gear Pump",
+          "dimensions": "15-Liter Reservoir, 3.5 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates hydraulic fluid pressure for cylinder actuation",
+          "alternatives": [
+            "3kW 3-Phase Industrial Pack"
+          ],
+          "low_budget_option": "2.2kW single-phase compact AC power pack - Saves \u20b918,000 in electrical wiring",
+          "unit_cost_inr": 32870.0,
+          "total_cost_inr": 32870.0,
+          "unit_cost_usd": 380.0,
+          "total_cost_usd": 380.0,
+          "cost_note": "\u20b932,870 / compact single-phase hydraulic power pack"
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG Welder (180A-200A Single Phase)",
+        "Angle Grinder with Cutting & Grinding Wheels",
+        "Bench Drill Press",
+        "Vernier Caliper & Hand Wrench Set"
+      ],
+      "manufacturing_processes": [
+        "Manual Abrasive Saw Profile Cutting",
+        "MIG Joint Welding (ER70S-6 wire)",
+        "Drilling & Reaming of Pivot Holes",
+        "Anti-Rust Primer & Epoxy Paint Spraying"
+      ],
+      "safety_precautions": [
+        "Install mechanical safety lock pin before working under platform",
+        "Equip hydraulic flow restrictor valve on cylinder outlet port",
+        "Apply anti-slip tape on top deck surface"
+      ],
+      "assembly_procedure": [
+        "Step 1: Cut ISMC channel frame members to length and tack-weld base rectangle.",
+        "Step 2: Drill scissor arm pivot holes using a drilling template to ensure alignment.",
+        "Step 3: Press Igus polymer bushes into arm pivot eyes.",
+        "Step 4: Connect scissor arm links to base guide channels with EN8 pins.",
+        "Step 5: Mount hydraulic cylinders and connect flexible hoses to power pack."
+      ],
+      "raw_material_subtotal_inr": 120754.0,
+      "estimated_machining_and_labor_inr": 16435.0,
+      "total_estimated_cost_inr": 137189.0,
+      "raw_material_subtotal_usd": 1396.0,
+      "estimated_machining_and_labor_usd": 190.0,
+      "total_estimated_cost_usd": 1586.0,
+      "cost_saving_strategies": [
+        {
+          "category": "Structural Steel",
+          "tip": "Use commercial IS 2062 ERW hollow sections instead of seamless alloy tubing to save ~35%.",
+          "estimated_savings_inr": 15000.0
+        },
+        {
+          "category": "Hydraulics",
+          "tip": "Select standard off-the-shelf agricultural hydraulic cylinders rather than custom bored cylinders to save ~45%.",
+          "estimated_savings_inr": 28000.0
+        },
+        {
+          "category": "Bushings",
+          "tip": "Use self-lubricating Igus engineering polymer bushings to eliminate expensive greasing manifolds and bronze machining.",
+          "estimated_savings_inr": 8500.0
+        }
+      ],
+      "key_design_considerations": [
+        "Load distribution across stiffened 4mm top deck plate",
+        "Pin shear stress analysis on EN8 pivot shafts",
+        "Buckling resistance of 70mm bore hydraulic cylinder"
+      ]
+    }
+  },
+  "7b9dfc9b": {
+    "id": "7b9dfc9b",
+    "project_name": "Hydraulic Lift",
+    "category": "Fluid Power & Material Handling",
+    "created_at": "2026-07-31 16:52:12",
+    "report": {
+      "project_name": "Hydraulic Lift",
+      "project_summary": "Cost-effective scissor lifting platform optimized with commercial grade IS 2062 mild steel profiles, standard hydraulic cylinders, and self-lubricating polymer bushings.",
+      "category": "Fluid Power & Material Handling",
+      "operating_environment": "Industrial Workshop / High Load",
+      "materials": [
+        {
+          "item_name": "Structural Scissor Arms",
+          "grade": "IS 2062 Grade E250 ERW Rectangular Hollow Section",
+          "dimensions": "100mm x 50mm x 4.5mm Wall, 1500mm Length",
+          "quantity": "4 pieces",
+          "purpose": "Primary scissor linkage transferring hydraulic thrust into vertical lifting motion",
+          "alternatives": [
+            "ASTM A36 Steel",
+            "Structural Angle Channel"
+          ],
+          "low_budget_option": "ERW Mild Steel RHS (E250) - 35% cheaper than seamless ST52 tubes",
+          "unit_cost_inr": 5882.0,
+          "total_cost_inr": 23528.0,
+          "unit_cost_usd": 68.0,
+          "total_cost_usd": 272.0,
+          "cost_note": "\u20b95,882 / profile section using commercial ERW mild steel"
+        },
+        {
+          "item_name": "Hydraulic Cylinder & CK45 Chrome Rod",
+          "grade": "Standard Agricultural ISO 6020 Hydraulic Cylinder",
+          "dimensions": "Bore 70mm, Rod 40mm, Stroke 500mm",
+          "quantity": "2 units",
+          "purpose": "Converts 160 Bar hydraulic pressure into linear lifting force",
+          "alternatives": [
+            "Custom Heavy Honed Cylinder"
+          ],
+          "low_budget_option": "Standard Off-the-Shelf Agricultural Cylinder - Saves 45% vs custom CNC cylinder",
+          "unit_cost_inr": 15570.0,
+          "total_cost_inr": 31140.0,
+          "unit_cost_usd": 180.0,
+          "total_cost_usd": 360.0,
+          "cost_note": "\u20b915,570 / mass-produced off-the-shelf cylinder unit"
+        },
+        {
+          "item_name": "Pivot Pins & Self-Lubricating Bushings",
+          "grade": "EN8 (080M40) Medium Carbon Steel Pins + Igus Polymer Bushes",
+          "dimensions": "Pin Dia 30mm x 160mm; Bush 30mm ID",
+          "quantity": "8 sets",
+          "purpose": "Rotational pivot joints connecting scissor arms to base guide tracks",
+          "alternatives": [
+            "AISI 4140 Hardened Chrome-Moly"
+          ],
+          "low_budget_option": "EN8 turned pins with Igutex self-lubricating polymer bushes (eliminates grease nipples)",
+          "unit_cost_inr": 1557.0,
+          "total_cost_inr": 12456.0,
+          "unit_cost_usd": 18.0,
+          "total_cost_usd": 144.0,
+          "cost_note": "\u20b91,557 / turned EN8 pin & engineering polymer bush set"
+        },
+        {
+          "item_name": "Base Channel Frame & Top Deck Plate",
+          "grade": "ISMC 100 Structural Steel Channel & 4mm Mild Steel Sheet",
+          "dimensions": "Frame: 1800x900mm; Plate 4mm thickness",
+          "quantity": "1 assembly",
+          "purpose": "Provides rigid structural base and load platform",
+          "alternatives": [
+            "ASTM A36 Heavy Channel"
+          ],
+          "low_budget_option": "ISMC 100 Channel frame with stiffener ribs - Reduces plate thickness from 6mm to 4mm",
+          "unit_cost_inr": 20760.0,
+          "total_cost_inr": 20760.0,
+          "unit_cost_usd": 240.0,
+          "total_cost_usd": 240.0,
+          "cost_note": "\u20b920,760 / ISMC channel steel frame & stiffened sheet deck"
+        },
+        {
+          "item_name": "Hydraulic Power Pack Unit",
+          "grade": "2.2kW Single-Phase Motor & 160 Bar Gear Pump",
+          "dimensions": "15-Liter Reservoir, 3.5 L/min flow",
+          "quantity": "1 complete unit",
+          "purpose": "Generates hydraulic fluid pressure for cylinder actuation",
+          "alternatives": [
+            "3kW 3-Phase Industrial Pack"
+          ],
+          "low_budget_option": "2.2kW single-phase compact AC power pack - Saves \u20b918,000 in electrical wiring",
+          "unit_cost_inr": 32870.0,
+          "total_cost_inr": 32870.0,
+          "unit_cost_usd": 380.0,
+          "total_cost_usd": 380.0,
+          "cost_note": "\u20b932,870 / compact single-phase hydraulic power pack"
+        }
+      ],
+      "tools_and_equipment": [
+        "MIG Welder (180A-200A Single Phase)",
+        "Angle Grinder with Cutting & Grinding Wheels",
+        "Bench Drill Press",
+        "Vernier Caliper & Hand Wrench Set"
+      ],
+      "manufacturing_processes": [
+        "Manual Abrasive Saw Profile Cutting",
+        "MIG Joint Welding (ER70S-6 wire)",
+        "Drilling & Reaming of Pivot Holes",
+        "Anti-Rust Primer & Epoxy Paint Spraying"
+      ],
+      "safety_precautions": [
+        "Install mechanical safety lock pin before working under platform",
+        "Equip hydraulic flow restrictor valve on cylinder outlet port",
+        "Apply anti-slip tape on top deck surface"
+      ],
+      "assembly_procedure": [
+        "Step 1: Cut ISMC channel frame members to length and tack-weld base rectangle.",
+        "Step 2: Drill scissor arm pivot holes using a drilling template to ensure alignment.",
+        "Step 3: Press Igus polymer bushes into arm pivot eyes.",
+        "Step 4: Connect scissor arm links to base guide channels with EN8 pins.",
+        "Step 5: Mount hydraulic cylinders and connect flexible hoses to power pack."
+      ],
+      "raw_material_subtotal_inr": 120754.0,
+      "estimated_machining_and_labor_inr": 16435.0,
+      "total_estimated_cost_inr": 137189.0,
+      "raw_material_subtotal_usd": 1396.0,
+      "estimated_machining_and_labor_usd": 190.0,
+      "total_estimated_cost_usd": 1586.0,
+      "cost_saving_strategies": [
+        {
+          "category": "Structural Steel",
+          "tip": "Use commercial IS 2062 ERW hollow sections instead of seamless alloy tubing to save ~35%.",
+          "estimated_savings_inr": 15000.0
+        },
+        {
+          "category": "Hydraulics",
+          "tip": "Select standard off-the-shelf agricultural hydraulic cylinders rather than custom bored cylinders to save ~45%.",
+          "estimated_savings_inr": 28000.0
+        },
+        {
+          "category": "Bushings",
+          "tip": "Use self-lubricating Igus engineering polymer bushings to eliminate expensive greasing manifolds and bronze machining.",
+          "estimated_savings_inr": 8500.0
+        }
+      ],
+      "key_design_considerations": [
+        "Load distribution across stiffened 4mm top deck plate",
+        "Pin shear stress analysis on EN8 pivot shafts",
+        "Buckling resistance of 70mm bore hydraulic cylinder"
+      ]
+    }
+  }
+}
